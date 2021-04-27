@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Envoie un mail</title>
+		<title>PDO test</title>
 		<meta charset="UTF-8">
 		<style>
             head, body{
@@ -37,12 +37,12 @@
             </style>
 	</head>
 	<body>
+    <h1>Liste des courses</h1>
 	<?php
         require_once('database.php');
         $list= database::getList();
         var_dump($list);
     ?>
-		<h1>Liste des courses</h1>
         <p>Click "Valider" pour afficher votre liste</p>
         <form method="post" action="">
             <input type="text" id="liste" name="liste" required /><br/>
