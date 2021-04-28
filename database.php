@@ -42,7 +42,19 @@ class database
       
    }
    
-   
+   // update produit
+   static function updateProduct()
+   {
+    self::createConnexion();
+    $sql="UPDATE produit SET nom='kefir',prix_unit=5 WHERE id_produit=22 ";
+    $query = self::$connect->query($sql);
+    if ($query!=false) {
+        echo "UPDATE Success!";
+    } else {
+        echo "ERROR" . $sql . "<br>";
+    }
+   }
+
    /*
    // pour ajouter dans notre liste
     static function addProd()
@@ -83,5 +95,7 @@ class database
 }
 database:: createConnexion();
 database:: chooseShop();
+database:: getList();
+database:: updateProduct();
 //database:: addProd();
 //database:: dropProd();
